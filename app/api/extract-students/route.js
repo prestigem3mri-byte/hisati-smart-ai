@@ -34,13 +34,13 @@ export async function POST(req) {
     }
 
     // منع الصور الكبيرة جدًا
-    const maxSize = 4 * 1024 * 1024;
+    const maxSize = 3 * 1024 * 1024;
 
     if (file.size > maxSize) {
       return Response.json(
         {
           error:
-            "الصورة كبيرة جدًا. اختاري صورة أقل من 4 MB أو التقطي صورة بجودة متوسطة.",
+            "الصورة كبيرة جدًا. اختاري صورة أقل من 3 MB أو التقطي صورة بجودة متوسطة.",
         },
         { status: 413 }
       );
